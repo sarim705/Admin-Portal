@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Table, TableBody, TableRow, TableCell, TableHead, TableContainer, Paper, Checkbox, IconButton, TextField, Button } from '@mui/material';
+import { Table, TableBody, TableRow, TableCell, TableHead, TableContainer, Paper, Checkbox, IconButton, TextField, Button, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const UsersTable = ({ users = [], currentPage, setCurrentPage, selectedRows = [], onCheckboxChange, onSelectAllRows, onEditRow, onSaveEdit, editingRow, onDeleteRow }) => {
@@ -51,10 +51,10 @@ const UsersTable = ({ users = [], currentPage, setCurrentPage, selectedRows = []
                 checked={selectedRows.length === itemsPerPage}
               />
             </TableCell>
-            <TableCell>ID</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Email</TableCell>
-            <TableCell>Action</TableCell>
+            <TableCell><Typography  variant="subtitle">ID</Typography> </TableCell>
+            <TableCell><Typography  variant="h5">NAME</Typography> </TableCell>
+            <TableCell><Typography  variant="h5">EMAIL</Typography> </TableCell>
+            <TableCell><Typography  variant="h5">ACTION</Typography></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

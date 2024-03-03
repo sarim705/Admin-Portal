@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Paper, TextField, Button, IconButton } from '@mui/material';
+import { Container, Paper, TextField, Button, IconButton ,Grid} from '@mui/material';
 import UsersTable from './Users/UsersTable';  
 import axios from 'axios';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -13,6 +13,7 @@ const App = () => {
   const [editingRow, setEditingRow] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showDeleteIcon, setShowDeleteIcon] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,6 +32,10 @@ const App = () => {
 
     fetchData();
   }, []);
+
+  useEffect(() => {
+    setShowDeleteIcon(selectedRows.length > 0);
+  }, [selectedRows]);
 
   const handleSearch = () => {
     const filtered = users.filter(user =>
@@ -95,40 +100,48 @@ const App = () => {
   }
 
   return (
-    <Container>
-      <Paper>
-        <TextField
-          label="Search"
-          variant="outlined"
-          placeholder="Enter..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <Button variant="contained" onClick={handleSearch}>
-          Search
-        </Button>
-
-        <UsersTable
-          users={filteredUsers}
-          currentPage={currentPage}
-          setCurrentPage={handlePageChange}
-          selectedRows={selectedRows}
-          onCheckboxChange={handleCheckboxChange}
-          onSelectAllRows={handleSelectAllRows}
-          onEditRow={handleEditRow}
-          editingRow={editingRow}
-          onSaveEdit={handleSaveEdit}
-          onDeleteRow={handleDeleteRow} // Passing handleDeleteRow function
-        />
-
-        {selectedRows.length > 0 && (
-          <IconButton onClick={() => handleDeleteRow(selectedRows[0])}>
-            <DeleteIcon />
-          </IconButton>
-        )}
-      </Paper>
-    </Container>
-  );
-};
-
-export default App;
+   
+      <Container>
+        <Paper style={{ padding: '20px' }}>
+          <Grid container spacing={2} alignItems="center">
+            <Grid item xs={10}>
+              <TextField
+                label="Search"
+                variant="outlined"
+                placeholder="Enter..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <Button variant="contained" onClick={handleSearch} fullWidth>
+                Search
+              </Button>
+            </Grid>
+          </Grid>
+  
+          <UsersTable
+            users={filteredUsers}
+            currentPage={currentPage}
+            setCurrentPage={handlePageChange}
+            selectedRows={selectedRows}
+            onCheckboxChange={handleCheckboxChange}
+            onSelectAllRows={handleSelectAllRows}
+            onEditRow={handleEditRow}
+            editingRow={editingRow}
+            onSaveEdit={handleSaveEdit}
+            onDeleteRow={handleDeleteRow}
+          />
+  
+          {showDeleteIcon && (
+            <IconButton onClick={() => handleDeleteRow(selectedRows[0])}>
+              <DeleteIcon />
+            </IconButton>
+          )}
+        </Paper>
+      </Container>
+    );
+  };
+  
+  export default App;
