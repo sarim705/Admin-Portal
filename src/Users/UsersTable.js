@@ -51,10 +51,10 @@ const UsersTable = ({ users = [], currentPage, setCurrentPage, selectedRows = []
                 checked={selectedRows.length === itemsPerPage}
               />
             </TableCell>
-            <TableCell><Typography  variant="subtitle">ID</Typography> </TableCell>
-            <TableCell><Typography  variant="h5">NAME</Typography> </TableCell>
-            <TableCell><Typography  variant="h5">EMAIL</Typography> </TableCell>
-            <TableCell><Typography  variant="h5">ACTION</Typography></TableCell>
+            <TableCell><Typography  variant="h6">ID</Typography> </TableCell>
+            <TableCell><Typography  variant="h6">NAME</Typography> </TableCell>
+            <TableCell><Typography  variant="h6">EMAIL</Typography> </TableCell>
+            <TableCell><Typography  variant="h6">ACTION</Typography></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
