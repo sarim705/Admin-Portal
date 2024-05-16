@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Admin-Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Admin-Portal is a user management application built with React.js and Material-UI. It fetches users/employees data from a remote API and allows for operations such as searching, editing, deleting, and pagination of user records.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Display Users**: View a list of users fetched from a remote API.
+- **Search**: Filter users by a search term.
+- **Edit**: Edit user details directly in the table.
+- **Delete**: Delete individual or multiple users.
+- **Pagination**: Navigate through user records with pagination controls.
+- **Select All**: Select or deselect all users on the current page.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React.js**: A JavaScript library for building user interfaces.
+- **Material-UI**: React components for faster and easier web development.
+- **Axios**: Promise-based HTTP client for the browser and node.js.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Make sure you have Node.js and npm installed on your machine.
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   
+   git clone https://github.com/yourusername/admin-portal.git
+   cd admin-portal
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install the dependencies:
+ 
+   npm install
+   
+3. Start the development server:
+ 
+   npm start
+   
+4. Open your browser and navigate to:
+ 
+    http://localhost:3000
+   
+Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+src/: Main project directory.
 
-### `npm run eject`
+components/UsersTable.js: Component for displaying and managing the users table.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+App.js: Main application component which handles the data fetching and state management.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Fetching Data
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The application fetches user data from the following API:
 
-## Learn More
+https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Editing Users
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Click the "Edit" button next to a user to make their name and email fields editable.
 
-### Code Splitting
+Modify the details and click "Save" to update the user/employee information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Deleting Users
 
-### Analyzing the Bundle Size
+Click the delete icon next to a user to remove them from the list.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Select multiple users using the checkboxes and delete them in bulk.
 
-### Making a Progressive Web App
+Pagination
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Use the pagination buttons at the bottom of the table to navigate through different pages of users.
 
-### Advanced Configuration
+Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Contributions are welcome! Please open an issue or submit a pull request for any bugs or feature requests.
 
-### Deployment
+License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### `npm run build` fails to minify
+ `https://github.com/sarim705/admin-portal.git` 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
