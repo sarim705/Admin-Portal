@@ -1,6 +1,6 @@
 # Admin-Portal
 
-Admin-Portal is a user management application built with React.js and Material-UI. It fetches users/employees data from a remote API and allows for operations such as searching, editing, deleting, and pagination of user records.
+Admin-Portal is a user management application built with React, Material-UI and Node.js. It fetches users/employees data from a remote API and allows for operations such as searching, editing, deleting, and pagination of user records.
 
 ## Features
 
