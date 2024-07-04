@@ -27,18 +27,19 @@ Make sure you have Node.js and npm installed on your machine.
 
 1. Clone the repository:
    
-   git clone https://github.com/yourusername/admin-portal.git
+   git clone https://github.com/sarim705/Admin-Portal.git
+   
    cd admin-portal
 
-2. Install the dependencies:
+3. Install the dependencies:
  
    npm install
    
-3. Start the development server:
+4. Start the development server:
  
    npm start
    
-4. Open your browser and navigate to:
+5. Open your browser and navigate to:
  
     http://localhost:3000
    
